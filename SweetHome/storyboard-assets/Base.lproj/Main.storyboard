@@ -124,6 +124,7 @@
                     <connections>
                         <outlet property="container" destination="zDR-yP-4ch" id="Ze4-oY-ah2"/>
                         <outlet property="listButtonOutlet" destination="teM-uW-chi" id="0pb-8M-cxR"/>
+                        <outlet property="optionsView" destination="djo-lX-W0B" id="Fg5-vY-F3G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qy-RV-G7k" userLabel="First Responder" sceneMemberID="firstResponder"/>

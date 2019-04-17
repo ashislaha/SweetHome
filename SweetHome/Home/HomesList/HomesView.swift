@@ -1,5 +1,5 @@
 //
-//  UserPreferanceView.swift
+//  HomesView.swift
 //  SweetHome
 //
 //  Created by Ashis Laha on 4/17/19.
@@ -8,25 +8,17 @@
 
 import UIKit
 
-protocol UserPreferanceViewProtocol: class {
-    func optionSelected(_ option: Options)
+protocol HomesViewProtocol: class {
+    func selectHome(_ id: String)
 }
 
-enum Options: String {
-    case collection = "Collection"
-    case myHouse = "My House"
-    case duplicate = "Duplicates"
-    case missing = "Missing"
-    case favourites = "Favourites"
-}
 
-class UserPreferanceView: UIView {
+class HomesView: UIView {
     
-    private let options: [Options] = [.collection, .myHouse, .duplicate, .missing, .favourites]
     private let cellId = "cellId"
     private var collectionView: UICollectionView!
     
-    public weak var delegate: UserPreferanceViewProtocol?
+    public weak var delegate: HomesViewProtocol?
     
     // MARK:- Init
     override init(frame: CGRect) {
@@ -56,26 +48,24 @@ class UserPreferanceView: UIView {
     }
 }
 
-extension UserPreferanceView: UICollectionViewDelegate {
+extension HomesView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped ", options[indexPath.row].rawValue)
-        delegate?.optionSelected(options[indexPath.row])
+       
     }
 }
 
-extension UserPreferanceView: UICollectionViewDataSource {
+extension HomesView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return options.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? TextCell else { return UICollectionViewCell() }
-        cell.text = options[indexPath.row].rawValue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         return cell
     }
 }
 
-extension UserPreferanceView: UICollectionViewDelegateFlowLayout {
+extension HomesView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: frame.width / 4, height: frame.height)
     }
@@ -83,5 +73,6 @@ extension UserPreferanceView: UICollectionViewDelegateFlowLayout {
         return 1.0
     }
 }
+
 
 

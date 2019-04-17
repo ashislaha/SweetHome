@@ -20,6 +20,9 @@
 		AD24D15122672FB90063F530 /* UserPreferanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15022672FB90063F530 /* UserPreferanceView.swift */; };
 		AD24D156226737B80063F530 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D155226737B80063F530 /* TextCell.swift */; };
 		AD24D158226737F60063F530 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D157226737F60063F530 /* UIView+extensions.swift */; };
+		AD24D15B226750A30063F530 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15A226750A30063F530 /* NetworkLayer.swift */; };
+		AD24D15D226750C80063F530 /* DataServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15C226750C80063F530 /* DataServiceLayer.swift */; };
+		AD24D15F226753600063F530 /* HomesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15E226753600063F530 /* HomesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		AD24D15022672FB90063F530 /* UserPreferanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferanceView.swift; sourceTree = "<group>"; };
 		AD24D155226737B80063F530 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		AD24D157226737F60063F530 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		AD24D15A226750A30063F530 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		AD24D15C226750C80063F530 /* DataServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceLayer.swift; sourceTree = "<group>"; };
+		AD24D15E226753600063F530 /* HomesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 			children = (
 				AD24D1452266F0F30063F530 /* HomeViewController.swift */,
 				AD24D1522267313F0063F530 /* User Preference Collection */,
+				AD24D160226753660063F530 /* HomesList */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -169,8 +176,18 @@
 			isa = PBXGroup;
 			children = (
 				AD24D157226737F60063F530 /* UIView+extensions.swift */,
+				AD24D15A226750A30063F530 /* NetworkLayer.swift */,
+				AD24D15C226750C80063F530 /* DataServiceLayer.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		AD24D160226753660063F530 /* HomesList */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D15E226753600063F530 /* HomesView.swift */,
+			);
+			path = HomesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD24D1482266F1280063F530 /* AddHomeViewController.swift in Sources */,
+				AD24D15D226750C80063F530 /* DataServiceLayer.swift in Sources */,
 				AD24D1292266EED40063F530 /* SweetHome.xcdatamodeld in Sources */,
 				AD24D1232266EED40063F530 /* BaseTabBarController.swift in Sources */,
 				AD24D15122672FB90063F530 /* UserPreferanceView.swift in Sources */,
@@ -282,6 +300,8 @@
 				AD24D1462266F0F30063F530 /* HomeViewController.swift in Sources */,
 				AD24D158226737F60063F530 /* UIView+extensions.swift in Sources */,
 				AD24D156226737B80063F530 /* TextCell.swift in Sources */,
+				AD24D15F226753600063F530 /* HomesView.swift in Sources */,
+				AD24D15B226750A30063F530 /* NetworkLayer.swift in Sources */,
 				AD24D14A2266F1340063F530 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

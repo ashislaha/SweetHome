@@ -12,13 +12,14 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak private var container: UIView!
     @IBOutlet weak private var listButtonOutlet: UIButton!
+    @IBOutlet weak private var optionsView: UserPreferanceView! {
+        didSet {
+            optionsView.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
     }
 
@@ -27,5 +28,22 @@ class HomeViewController: UIViewController {
     }
     @IBAction private func listTapped(_ sender: UIButton) {
         
+    }
+}
+
+extension HomeViewController: UserPreferanceViewProtocol {
+    func optionSelected(_ option: Options) {
+        switch option {
+        case .collection:
+            print("load collection of homes")
+        case .duplicate:
+            print("load the duplicates")
+        case .favourites:
+            print("favourites")
+        case .missing:
+            print("open missing")
+        case .myHouse:
+            print("my house")
+        }
     }
 }
