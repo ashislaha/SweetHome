@@ -13,6 +13,7 @@ class TextCell: UICollectionViewCell {
     public var text: String? {
         didSet {
             textLabel.text = text
+            textLabel.textColor = .darkGray
         }
     }
     
@@ -38,5 +39,9 @@ class TextCell: UICollectionViewCell {
     private func viewSetUp() {
         addSubview(textLabel)
         textLabel.fillSuperView()
+    }
+    
+    public func updateColor(selected: Bool) {
+        textLabel.textColor = selected ? UIColor(red: 100/255.0, green: 200/255.0, blue: 1.0, alpha: 1.0): UIColor.darkGray
     }
 }

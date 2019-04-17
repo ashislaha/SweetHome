@@ -58,8 +58,15 @@ class UserPreferanceView: UIView {
 
 extension UserPreferanceView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped ", options[indexPath.row].rawValue)
+        if let cell = collectionView.cellForItem(at: indexPath) as? TextCell {
+            cell.updateColor(selected: true)
+        }
         delegate?.optionSelected(options[indexPath.row])
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? TextCell {
+            cell.updateColor(selected: false)
+        }
     }
 }
 
@@ -71,6 +78,9 @@ extension UserPreferanceView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? TextCell else { return UICollectionViewCell() }
         cell.text = options[indexPath.row].rawValue
+        if options[indexPath.row] == .collection {
+            cell.updateColor(selected: true)
+        }
         return cell
     }
 }

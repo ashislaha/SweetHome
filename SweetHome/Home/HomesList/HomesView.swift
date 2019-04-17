@@ -19,6 +19,11 @@ class HomesView: UIView {
     private var collectionView: UICollectionView!
     
     public weak var delegate: HomesViewProtocol?
+    public var photos: [Photo] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     // MARK:- Init
     override init(frame: CGRect) {
@@ -35,44 +40,53 @@ class HomesView: UIView {
     // MARK:- setup collectionView
     private func collectionViewSetUp() {
         let layout =  UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
         addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(TextCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(HomeCollectionCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.backgroundColor = .clear
         collectionView.allowsSelection = true
         collectionView.isScrollEnabled = true
     }
 }
 
-extension HomesView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-    }
-}
-
 extension HomesView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? HomeCollectionCell else { return UICollectionViewCell() }
+        cell.photo = photos[indexPath.row]
         return cell
     }
 }
 
-extension HomesView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width / 4, height: frame.height)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+// MARK: UICollectionViewDelegate
+extension HomesView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // initialise the details of photo if needed
     }
 }
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension HomesView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: frame.width/3 - 6, height: frame.width/3 - 6)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+}
+
 
 
 

@@ -23,6 +23,9 @@
 		AD24D15B226750A30063F530 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15A226750A30063F530 /* NetworkLayer.swift */; };
 		AD24D15D226750C80063F530 /* DataServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15C226750C80063F530 /* DataServiceLayer.swift */; };
 		AD24D15F226753600063F530 /* HomesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D15E226753600063F530 /* HomesView.swift */; };
+		AD24D162226774500063F530 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D161226774500063F530 /* DataModel.swift */; };
+		AD24D164226776AE0063F530 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D163226776AE0063F530 /* HomeCollectionCell.swift */; };
+		AD24D166226776DC0063F530 /* ImageCachingSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D165226776DC0063F530 /* ImageCachingSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		AD24D15A226750A30063F530 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		AD24D15C226750C80063F530 /* DataServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceLayer.swift; sourceTree = "<group>"; };
 		AD24D15E226753600063F530 /* HomesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomesView.swift; sourceTree = "<group>"; };
+		AD24D161226774500063F530 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		AD24D163226776AE0063F530 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
+		AD24D165226776DC0063F530 /* ImageCachingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachingSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				AD24D12F2266EED50063F530 /* Info.plist */,
 				AD24D1202266EED40063F530 /* AppDelegate.swift */,
 				AD24D1222266EED40063F530 /* BaseTabBarController.swift */,
+				AD24D167226777140063F530 /* Network+DataModel */,
 				AD24D14B2266F1510063F530 /* Home */,
 				AD24D14C2266F15A0063F530 /* Add Home */,
 				AD24D14D2266F1610063F530 /* Information */,
@@ -176,8 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				AD24D157226737F60063F530 /* UIView+extensions.swift */,
-				AD24D15A226750A30063F530 /* NetworkLayer.swift */,
-				AD24D15C226750C80063F530 /* DataServiceLayer.swift */,
+				AD24D165226776DC0063F530 /* ImageCachingSystem.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -186,8 +192,19 @@
 			isa = PBXGroup;
 			children = (
 				AD24D15E226753600063F530 /* HomesView.swift */,
+				AD24D163226776AE0063F530 /* HomeCollectionCell.swift */,
 			);
 			path = HomesList;
+			sourceTree = "<group>";
+		};
+		AD24D167226777140063F530 /* Network+DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D15A226750A30063F530 /* NetworkLayer.swift */,
+				AD24D161226774500063F530 /* DataModel.swift */,
+				AD24D15C226750C80063F530 /* DataServiceLayer.swift */,
+			);
+			path = "Network+DataModel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +314,10 @@
 				AD24D1232266EED40063F530 /* BaseTabBarController.swift in Sources */,
 				AD24D15122672FB90063F530 /* UserPreferanceView.swift in Sources */,
 				AD24D1212266EED40063F530 /* AppDelegate.swift in Sources */,
+				AD24D164226776AE0063F530 /* HomeCollectionCell.swift in Sources */,
+				AD24D162226774500063F530 /* DataModel.swift in Sources */,
 				AD24D1462266F0F30063F530 /* HomeViewController.swift in Sources */,
+				AD24D166226776DC0063F530 /* ImageCachingSystem.swift in Sources */,
 				AD24D158226737F60063F530 /* UIView+extensions.swift in Sources */,
 				AD24D156226737B80063F530 /* TextCell.swift in Sources */,
 				AD24D15F226753600063F530 /* HomesView.swift in Sources */,
