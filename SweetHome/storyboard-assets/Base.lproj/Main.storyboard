@@ -49,14 +49,38 @@
                     <view key="view" contentMode="scaleToFill" id="OX4-CF-6c1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hX5-PC-mGC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkl-dd-SxU">
+                                        <rect key="frame" x="149" y="19.5" width="77" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39215686274509803" green="0.78431372549019607" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xkl-dd-SxU" firstAttribute="centerY" secondItem="hX5-PC-mGC" secondAttribute="centerY" id="fEJ-qM-8KO"/>
+                                    <constraint firstItem="xkl-dd-SxU" firstAttribute="centerX" secondItem="hX5-PC-mGC" secondAttribute="centerX" id="vBY-Hw-py3"/>
+                                    <constraint firstAttribute="height" constant="60" id="xy0-za-gVs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hX5-PC-mGC" firstAttribute="leading" secondItem="LEc-Ne-mw0" secondAttribute="leading" id="3fV-db-0o5"/>
+                            <constraint firstItem="LEc-Ne-mw0" firstAttribute="top" secondItem="hX5-PC-mGC" secondAttribute="top" id="NcQ-su-TMf"/>
+                            <constraint firstItem="hX5-PC-mGC" firstAttribute="trailing" secondItem="LEc-Ne-mw0" secondAttribute="trailing" id="vrF-2t-R8d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LEc-Ne-mw0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Collection" image="collection" id="1Ef-UX-uvj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qy-RV-G7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="-690"/>
+            <point key="canvasLocation" x="-15.199999999999999" y="-690.40479760119945"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="bIY-UQ-v2u">
