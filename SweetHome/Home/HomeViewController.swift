@@ -10,13 +10,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var listButtonOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
     }
 
+    @IBAction func searchTapped(_ sender: UIButton) {
+        
+    }
+    @IBAction func listTapped(_ sender: UIButton) {
+        
+    }
 }
