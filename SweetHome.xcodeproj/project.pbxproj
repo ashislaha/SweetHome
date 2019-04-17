@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AD24D1212266EED40063F530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1202266EED40063F530 /* AppDelegate.swift */; };
-		AD24D1232266EED40063F530 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1222266EED40063F530 /* ViewController.swift */; };
+		AD24D1232266EED40063F530 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1222266EED40063F530 /* BaseTabBarController.swift */; };
 		AD24D1262266EED40063F530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD24D1242266EED40063F530 /* Main.storyboard */; };
 		AD24D1292266EED40063F530 /* SweetHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1272266EED40063F530 /* SweetHome.xcdatamodeld */; };
 		AD24D12B2266EED50063F530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD24D12A2266EED50063F530 /* Assets.xcassets */; };
 		AD24D12E2266EED50063F530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD24D12C2266EED50063F530 /* LaunchScreen.storyboard */; };
 		AD24D1392266EED50063F530 /* SweetHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1382266EED50063F530 /* SweetHomeTests.swift */; };
+		AD24D1462266F0F30063F530 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1452266F0F30063F530 /* HomeViewController.swift */; };
+		AD24D1482266F1280063F530 /* AddHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1472266F1280063F530 /* AddHomeViewController.swift */; };
+		AD24D14A2266F1340063F530 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D1492266F1340063F530 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +32,7 @@
 /* Begin PBXFileReference section */
 		AD24D11D2266EED40063F530 /* SweetHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweetHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD24D1202266EED40063F530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD24D1222266EED40063F530 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD24D1222266EED40063F530 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		AD24D1252266EED40063F530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD24D1282266EED40063F530 /* SweetHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SweetHome.xcdatamodel; sourceTree = "<group>"; };
 		AD24D12A2266EED50063F530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +41,9 @@
 		AD24D1342266EED50063F530 /* SweetHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SweetHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD24D1382266EED50063F530 /* SweetHomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetHomeTests.swift; sourceTree = "<group>"; };
 		AD24D13A2266EED50063F530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD24D1452266F0F30063F530 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AD24D1472266F1280063F530 /* AddHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomeViewController.swift; sourceTree = "<group>"; };
+		AD24D1492266F1340063F530 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +85,14 @@
 		AD24D11F2266EED40063F530 /* SweetHome */ = {
 			isa = PBXGroup;
 			children = (
-				AD24D1202266EED40063F530 /* AppDelegate.swift */,
-				AD24D1222266EED40063F530 /* ViewController.swift */,
-				AD24D1242266EED40063F530 /* Main.storyboard */,
-				AD24D12A2266EED50063F530 /* Assets.xcassets */,
-				AD24D12C2266EED50063F530 /* LaunchScreen.storyboard */,
 				AD24D12F2266EED50063F530 /* Info.plist */,
-				AD24D1272266EED40063F530 /* SweetHome.xcdatamodeld */,
+				AD24D1202266EED40063F530 /* AppDelegate.swift */,
+				AD24D1222266EED40063F530 /* BaseTabBarController.swift */,
+				AD24D14B2266F1510063F530 /* Home */,
+				AD24D14C2266F15A0063F530 /* Add Home */,
+				AD24D14D2266F1610063F530 /* Information */,
+				AD24D1432266EF990063F530 /* storyboard-assets */,
+				AD24D1442266EFA50063F530 /* core-data */,
 			);
 			path = SweetHome;
 			sourceTree = "<group>";
@@ -97,6 +104,48 @@
 				AD24D13A2266EED50063F530 /* Info.plist */,
 			);
 			path = SweetHomeTests;
+			sourceTree = "<group>";
+		};
+		AD24D1432266EF990063F530 /* storyboard-assets */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D1242266EED40063F530 /* Main.storyboard */,
+				AD24D12A2266EED50063F530 /* Assets.xcassets */,
+				AD24D12C2266EED50063F530 /* LaunchScreen.storyboard */,
+			);
+			path = "storyboard-assets";
+			sourceTree = "<group>";
+		};
+		AD24D1442266EFA50063F530 /* core-data */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D1272266EED40063F530 /* SweetHome.xcdatamodeld */,
+			);
+			path = "core-data";
+			sourceTree = "<group>";
+		};
+		AD24D14B2266F1510063F530 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D1452266F0F30063F530 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AD24D14C2266F15A0063F530 /* Add Home */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D1472266F1280063F530 /* AddHomeViewController.swift */,
+			);
+			path = "Add Home";
+			sourceTree = "<group>";
+		};
+		AD24D14D2266F1610063F530 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				AD24D1492266F1340063F530 /* InformationViewController.swift */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD24D1482266F1280063F530 /* AddHomeViewController.swift in Sources */,
 				AD24D1292266EED40063F530 /* SweetHome.xcdatamodeld in Sources */,
-				AD24D1232266EED40063F530 /* ViewController.swift in Sources */,
+				AD24D1232266EED40063F530 /* BaseTabBarController.swift in Sources */,
 				AD24D1212266EED40063F530 /* AppDelegate.swift in Sources */,
+				AD24D1462266F0F30063F530 /* HomeViewController.swift in Sources */,
+				AD24D14A2266F1340063F530 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
