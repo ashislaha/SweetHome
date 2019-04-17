@@ -10,20 +10,22 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var listButtonOutlet: UIButton!
+    @IBOutlet weak private var container: UIView!
+    @IBOutlet weak private var listButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
     }
 
-    @IBAction func searchTapped(_ sender: UIButton) {
+    @IBAction private func searchTapped(_ sender: UIButton) {
         
     }
-    @IBAction func listTapped(_ sender: UIButton) {
+    @IBAction private func listTapped(_ sender: UIButton) {
         
     }
 }

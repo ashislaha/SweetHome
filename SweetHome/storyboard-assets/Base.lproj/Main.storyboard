@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.39215686274509803" green="0.78431372549019607" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xww-YC-qBP" secondAttribute="trailing" constant="14" id="Mxi-Fe-FcZ"/>
                                     <constraint firstItem="xkl-dd-SxU" firstAttribute="centerY" secondItem="hX5-PC-mGC" secondAttribute="centerY" id="fEJ-qM-8KO"/>
@@ -100,13 +100,21 @@
                                     <constraint firstAttribute="height" constant="44" id="bJW-Jn-UCQ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDR-yP-4ch" userLabel="container">
+                                <rect key="frame" x="0.0" y="126" width="375" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.3921568627" green="0.78582644000000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hX5-PC-mGC" firstAttribute="leading" secondItem="LEc-Ne-mw0" secondAttribute="leading" id="3fV-db-0o5"/>
+                            <constraint firstItem="zDR-yP-4ch" firstAttribute="bottom" secondItem="LEc-Ne-mw0" secondAttribute="bottom" id="Ibc-DV-pTz"/>
                             <constraint firstItem="djo-lX-W0B" firstAttribute="trailing" secondItem="LEc-Ne-mw0" secondAttribute="trailing" id="KqY-3f-41u"/>
                             <constraint firstItem="LEc-Ne-mw0" firstAttribute="top" secondItem="hX5-PC-mGC" secondAttribute="top" id="NcQ-su-TMf"/>
                             <constraint firstItem="djo-lX-W0B" firstAttribute="leading" secondItem="LEc-Ne-mw0" secondAttribute="leading" id="Ztc-Ur-Cg4"/>
+                            <constraint firstItem="zDR-yP-4ch" firstAttribute="trailing" secondItem="LEc-Ne-mw0" secondAttribute="trailing" id="feW-TJ-364"/>
+                            <constraint firstItem="zDR-yP-4ch" firstAttribute="top" secondItem="djo-lX-W0B" secondAttribute="bottom" constant="2" id="gm8-bR-wUe"/>
+                            <constraint firstItem="zDR-yP-4ch" firstAttribute="leading" secondItem="LEc-Ne-mw0" secondAttribute="leading" id="iTl-Yg-qzM"/>
                             <constraint firstItem="djo-lX-W0B" firstAttribute="top" secondItem="hX5-PC-mGC" secondAttribute="bottom" id="tFr-oa-O7v"/>
                             <constraint firstItem="hX5-PC-mGC" firstAttribute="trailing" secondItem="LEc-Ne-mw0" secondAttribute="trailing" id="vrF-2t-R8d"/>
                         </constraints>
@@ -114,6 +122,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Collection" image="collection" id="1Ef-UX-uvj"/>
                     <connections>
+                        <outlet property="container" destination="zDR-yP-4ch" id="Ze4-oY-ah2"/>
                         <outlet property="listButtonOutlet" destination="teM-uW-chi" id="0pb-8M-cxR"/>
                     </connections>
                 </viewController>
