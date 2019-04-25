@@ -21,7 +21,7 @@ typealias failureBlock = ((Any?) -> Void)
 
 final class NetworkLayer {
     // "GET"
-    class func getData(url: URL, successBlock: successBlock?, failed failureBlock: failureBlock? ) {
+    class func getDictionaryData(url: URL, successBlock: successBlock?, failed failureBlock: failureBlock? ) {
         
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -29,6 +29,17 @@ final class NetworkLayer {
                 guard let response = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) else { return }
                 // call back in back-ground thread, so please update UI elements in main-thread while computing
                 successBlock?(response)
+            } else {
+                failureBlock?(error)
+            }
+        }
+        session.resume()
+    }
+    
+    class func getRawData(url: URL, successBlock: successBlock?, failed failureBlock: failureBlock? ) {
+        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data, error == nil {
+                successBlock?(data)
             } else {
                 failureBlock?(error)
             }
@@ -71,6 +82,24 @@ private extension NetworkLayer {
             bodyData = try? JSONSerialization.data(withJSONObject: httpBody, options: .prettyPrinted)
         }
         return bodyData
+    }
+}
+
+// MARK:- loadImage
+extension NetworkLayer {
+    class func loadImage(_ imageUrl: String, completionBlock: @escaping (Data?, Error?) -> ()) {
+        guard !imageUrl.isEmpty, let url = URL(string: imageUrl) else {
+            completionBlock(nil, nil)
+            return
+        }
+        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data , error == nil else {
+                completionBlock(nil, error)
+                return
+            }
+            completionBlock(data, nil)
+        }
+        session.resume()
     }
 }
 

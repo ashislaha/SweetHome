@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5H8-v4-zIF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5H8-v4-zIF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,9 +66,6 @@
                                             <constraint firstAttribute="width" constant="33" id="lAX-pT-NQu"/>
                                         </constraints>
                                         <state key="normal" image="search"/>
-                                        <connections>
-                                            <action selector="searchTapped:" destination="cVM-66-6y9" eventType="touchUpInside" id="V6Y-A1-I3C"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teM-uW-chi" userLabel="list">
                                         <rect key="frame" x="279" y="13.5" width="33" height="33"/>
@@ -77,9 +74,6 @@
                                             <constraint firstAttribute="height" constant="33" id="OGk-9d-nCu"/>
                                         </constraints>
                                         <state key="normal" image="list-unselected"/>
-                                        <connections>
-                                            <action selector="listTapped:" destination="cVM-66-6y9" eventType="touchUpInside" id="TST-pg-up8"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,10 +146,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add-home" width="33" height="33"/>
-        <image name="collection" width="33" height="33"/>
-        <image name="information" width="33" height="33"/>
-        <image name="list-unselected" width="33" height="33"/>
-        <image name="search" width="33" height="33"/>
+        <image name="add-home" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="collection" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="information" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="list-unselected" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="search" width="33.333332061767578" height="33.333332061767578"/>
     </resources>
 </document>

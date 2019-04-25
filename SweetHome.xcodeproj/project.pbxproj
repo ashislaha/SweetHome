@@ -26,6 +26,7 @@
 		AD24D162226774500063F530 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D161226774500063F530 /* DataModel.swift */; };
 		AD24D164226776AE0063F530 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D163226776AE0063F530 /* HomeCollectionCell.swift */; };
 		AD24D166226776DC0063F530 /* ImageCachingSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD24D165226776DC0063F530 /* ImageCachingSystem.swift */; };
+		AD6C03AF22715F2E00EBA26E /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6C03AE22715F2E00EBA26E /* UIColor+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		AD24D161226774500063F530 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		AD24D163226776AE0063F530 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
 		AD24D165226776DC0063F530 /* ImageCachingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachingSystem.swift; sourceTree = "<group>"; };
+		AD6C03AE22715F2E00EBA26E /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			children = (
 				AD24D157226737F60063F530 /* UIView+extensions.swift */,
 				AD24D165226776DC0063F530 /* ImageCachingSystem.swift */,
+				AD6C03AE22715F2E00EBA26E /* UIColor+extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				AD24D1462266F0F30063F530 /* HomeViewController.swift in Sources */,
 				AD24D166226776DC0063F530 /* ImageCachingSystem.swift in Sources */,
 				AD24D158226737F60063F530 /* UIView+extensions.swift in Sources */,
+				AD6C03AF22715F2E00EBA26E /* UIColor+extensions.swift in Sources */,
 				AD24D156226737B80063F530 /* TextCell.swift in Sources */,
 				AD24D15F226753600063F530 /* HomesView.swift in Sources */,
 				AD24D15B226750A30063F530 /* NetworkLayer.swift in Sources */,

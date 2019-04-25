@@ -10,7 +10,6 @@ import Foundation
 
 struct Constants {
     struct DataService {
-        static let endPoint = "https://google.com"
         static let flickrEndPoint = "https://api.flickr.com/services/rest/"
     }
 }
@@ -32,26 +31,7 @@ final class DataServiceProvider {
         "nojsoncallback": "1"
     ]
     
-    // get photos (using JSONDecoder)
-    func getPhotos(params: [String: String], completionHandler: @escaping (([Photo])->())) throws {
-        let endPointUrl = getUrl(params)
-        guard let url = URL(string: endPointUrl) else { throw DataSourceError.InvalidURL }
-        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            do {
-                let photosModel = try JSONDecoder().decode(PhotosModel.self, from: data)
-                DispatchQueue.main.async {
-                    completionHandler(photosModel.photosMetaData.photo)
-                }
-            } catch let error {
-                print(error)
-                completionHandler([])
-            }
-        }
-        session.resume()
-    }
-    
-    private func getUrl(_ params: [String: String]) -> String { // input params is text & page like text = kittens, page = 2
+    private func getUrl(_ params: [String: String]) -> String {
         var endPoint = Constants.DataService.flickrEndPoint + "?"
         defaultParams.forEach {
             endPoint += $0 + "=" + $1 + "&"
@@ -63,33 +43,24 @@ final class DataServiceProvider {
         return endPoint
     }
     
-    // get single home (using JSONDecoder)
-    func getHome(completionHandler: @escaping ((Home)->())) throws {
-        let categoriesEndPoint = Constants.DataService.endPoint + "/home.json"
-        guard let url = URL(string: categoriesEndPoint) else { throw DataSourceError.InvalidURL }
-        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            guard let categories = try? JSONDecoder().decode(Home.self, from: data) else { return }
-            DispatchQueue.main.async {
-                completionHandler(categories)
-            }
-        }
-        session.resume()
-    }
-    
-    // get all homes details
-    func getAllHomes(productId: String, completionHandler: @escaping (([Home])->())) throws {
-        let urlStr = Constants.DataService.endPoint + "/allHomes.json"
-        guard let url = URL(string: urlStr), !urlStr.isEmpty else { throw DataSourceError.InvalidURL }
+    // get photos (using JSONDecoder)
+    func getPhotos(params: [String: String], completionHandler: @escaping (([Photo])->())) throws {
+        let endPointUrl = getUrl(params)
+        guard let url = URL(string: endPointUrl) else { throw DataSourceError.InvalidURL }
         
-        NetworkLayer.getData(url: url, successBlock: { (response) in
-            // success
-            DispatchQueue.main.async {
-                guard let response = response as? [String: Any] else { return }
+        NetworkLayer.getRawData(url: url, successBlock: { (data) in
+            guard let data = data as? Data else { return }
+            do {
+                let photosModel = try JSONDecoder().decode(PhotosModel.self, from: data)
+                DispatchQueue.main.async {
+                    completionHandler(photosModel.photosMetaData.photo)
+                }
+            } catch let error {
+                print(error)
                 completionHandler([])
             }
         }) { (error) in
-            print(error.debugDescription)
+            // handle error if needed
         }
     }
 }

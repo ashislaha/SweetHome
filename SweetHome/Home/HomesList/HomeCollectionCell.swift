@@ -61,26 +61,20 @@ class HomeCollectionCell: UICollectionViewCell {
         // example http://farm1.static.flickr.com/578/23451156376_8983a8ebc7.jpg
         
         let imageUrl = "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg"
-        loadImage(imageUrl)
-    }
-    
-    // MARK: loadImage
-    private func loadImage(_ imageUrl: String) {
-        guard !imageUrl.isEmpty, let url = URL(string: imageUrl) else { return }
         
         // check whether the image is present into cache or not
         if let cacheItem = cacheImages.object(forKey: NSString(string: imageUrl)) {
             imageView.image = cacheItem.image
         } else {
-            let session = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-                guard let data = data , error == nil else { return }
+            NetworkLayer.loadImage(imageUrl) { [weak self] (data, error) in
+                guard error == nil, let data = data, let strongSelf = self else { return }
+                
                 DispatchQueue.main.async {
                     guard let image = UIImage(data: data) else { return }
-                    self?.cacheImages.setObject(DiscardableImageCacheItem(image: image), forKey: NSString(string: imageUrl)) // setting into cache
-                    self?.imageView.image = image
+                    strongSelf.cacheImages.setObject(DiscardableImageCacheItem(image: image), forKey: NSString(string: imageUrl)) // setting into cache
+                    strongSelf.imageView.image = image
                 }
             }
-            session.resume()
         }
     }
 }

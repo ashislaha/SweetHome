@@ -26,7 +26,6 @@ class HomeViewController: UIViewController {
     }()
     
     private var currentSelectedOption: Options = .collection
-    
     private let dataService = DataServiceProvider()
     
     override func viewDidLoad() {
@@ -34,13 +33,6 @@ class HomeViewController: UIViewController {
        
         add(childView: homeView)
         initialiseHome()
-    }
-
-    @IBAction private func searchTapped(_ sender: UIButton) {
-        
-    }
-    @IBAction private func listTapped(_ sender: UIButton) {
-        
     }
     
     // MARK:- initialise home
@@ -67,37 +59,24 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UserPreferanceViewProtocol {
     func optionSelected(_ option: Options) {
-        
         guard currentSelectedOption != option else { return }
-        
-        // remove the older one
-        switch currentSelectedOption {
-        case .collection:
-            delete(childView: homeView)
-        case .duplicate:
-            print("load the duplicates")
-        case .favourites:
-            print("favourites")
-        case .missing:
-            print("open missing")
-        case .myHouse:
-            print("my house")
-        }
-        
-        // add new view
+        performOps(currentSelectedOption, isRemoving: true) // remove the older one
+        performOps(option, isRemoving: false) // add new view
+        currentSelectedOption = option
+    }
+    private func performOps(_ option: Options, isRemoving: Bool = false) {
         switch option {
         case .collection:
-            add(childView: homeView)
-            initialiseHome()
-        case .duplicate:
-            print("load the duplicates")
-        case .favourites:
-            print("favourites")
-        case .missing:
-            print("open missing")
-        case .myHouse:
-            print("my house")
+            if isRemoving {
+                delete(childView: homeView)
+            } else {
+                add(childView: homeView)
+                initialiseHome()
+            }
+        case .duplicate: break
+        case .favourites: break
+        case .missing: break
+        case .myHouse: break
         }
-        currentSelectedOption = option
     }
 }
