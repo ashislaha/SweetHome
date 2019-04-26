@@ -9,9 +9,8 @@
 import UIKit
 
 class HomeDetailsDesciptionTableViewCell: UITableViewCell {
-
-    @IBOutlet weak private var details: UILabel!
     
+    @IBOutlet weak private var details: UILabel!
     public var desc: String? {
         didSet {
             details.text = desc

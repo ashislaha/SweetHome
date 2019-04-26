@@ -35,6 +35,9 @@
 		AD7ACA812272B21D00E10602 /* homeDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = AD7ACA802272B21D00E10602 /* homeDetails.json */; };
 		AD7ACA842272C09600E10602 /* HomeDetailsDesciptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7ACA822272C09600E10602 /* HomeDetailsDesciptionTableViewCell.swift */; };
 		AD7ACA852272C09600E10602 /* HomeDetailsDesciptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7ACA832272C09600E10602 /* HomeDetailsDesciptionTableViewCell.xib */; };
+		AD7ACA892272C4BA00E10602 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7ACA872272C4BA00E10602 /* VideoTableViewCell.swift */; };
+		AD7ACA8A2272C4BA00E10602 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD7ACA882272C4BA00E10602 /* VideoTableViewCell.xib */; };
+		AD7ACA8E2272C6A600E10602 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7ACA8D2272C6A600E10602 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		AD7ACA802272B21D00E10602 /* homeDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = homeDetails.json; sourceTree = "<group>"; };
 		AD7ACA822272C09600E10602 /* HomeDetailsDesciptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailsDesciptionTableViewCell.swift; sourceTree = "<group>"; };
 		AD7ACA832272C09600E10602 /* HomeDetailsDesciptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailsDesciptionTableViewCell.xib; sourceTree = "<group>"; };
+		AD7ACA872272C4BA00E10602 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		AD7ACA882272C4BA00E10602 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		AD7ACA8D2272C6A600E10602 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7ACA8E2272C6A600E10602 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +113,7 @@
 				AD24D11F2266EED40063F530 /* SweetHome */,
 				AD24D1372266EED50063F530 /* SweetHomeTests */,
 				AD24D11E2266EED40063F530 /* Products */,
+				AD7ACA8C2272C6A600E10602 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +243,7 @@
 				AD7ACA7E2272AEB800E10602 /* HomeDetailsModel.swift */,
 				AD7ACA7D2272AA5000E10602 /* ImageCell */,
 				AD7ACA862272C09C00E10602 /* Description */,
+				AD7ACA8B2272C4BE00E10602 /* video */,
 			);
 			path = "Home Details";
 			sourceTree = "<group>";
@@ -256,6 +265,23 @@
 				AD7ACA832272C09600E10602 /* HomeDetailsDesciptionTableViewCell.xib */,
 			);
 			path = Description;
+			sourceTree = "<group>";
+		};
+		AD7ACA8B2272C4BE00E10602 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				AD7ACA872272C4BA00E10602 /* VideoTableViewCell.swift */,
+				AD7ACA882272C4BA00E10602 /* VideoTableViewCell.xib */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		AD7ACA8C2272C6A600E10602 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD7ACA8D2272C6A600E10602 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7ACA8A2272C4BA00E10602 /* VideoTableViewCell.xib in Resources */,
 				AD7ACA812272B21D00E10602 /* homeDetails.json in Resources */,
 				AD24D12E2266EED50063F530 /* LaunchScreen.storyboard in Resources */,
 				AD7ACA7A22729E5800E10602 /* HomeDetailsImageTableViewCell.xib in Resources */,
@@ -365,6 +392,7 @@
 				AD7ACA7C2272A83B00E10602 /* ImageCollectionCell.swift in Sources */,
 				AD6C03BA2272173D00EBA26E /* HomeDetailsViewController.swift in Sources */,
 				AD24D1482266F1280063F530 /* AddHomeViewController.swift in Sources */,
+				AD7ACA892272C4BA00E10602 /* VideoTableViewCell.swift in Sources */,
 				AD24D15D226750C80063F530 /* DataServiceLayer.swift in Sources */,
 				AD24D1292266EED40063F530 /* SweetHome.xcdatamodeld in Sources */,
 				AD24D1232266EED40063F530 /* BaseTabBarController.swift in Sources */,

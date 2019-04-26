@@ -38,6 +38,7 @@ class HomeDetailsViewController: UIViewController {
             
             tableView.register(UINib(nibName: "HomeDetailsImageTableViewCell", bundle: nil), forCellReuseIdentifier: HomeDetailsCellType.image.getCellId())
             tableView.register(UINib(nibName: "HomeDetailsDesciptionTableViewCell", bundle: nil), forCellReuseIdentifier: HomeDetailsCellType.description.getCellId())
+            tableView.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: HomeDetailsCellType.video.getCellId())
             
             // resize based on content
             tableView.rowHeight = UITableView.automaticDimension
@@ -97,7 +98,10 @@ extension HomeDetailsViewController: UITableViewDataSource {
             cell.desc = model?.description
             return cell
             
-        case .video: break
+        case .video:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeDetailsCellType.video.getCellId(), for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
+            cell.videoUrl = model?.videoUrl
+            return cell
             
         case .map: break
             
