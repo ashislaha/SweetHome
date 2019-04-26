@@ -35,7 +35,10 @@ class HomeDetailsViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            
             tableView.register(UINib(nibName: "HomeDetailsImageTableViewCell", bundle: nil), forCellReuseIdentifier: HomeDetailsCellType.image.getCellId())
+            tableView.register(UINib(nibName: "HomeDetailsDesciptionTableViewCell", bundle: nil), forCellReuseIdentifier: HomeDetailsCellType.description.getCellId())
+            
             // resize based on content
             tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 100
@@ -71,6 +74,8 @@ extension HomeDetailsViewController: UITableViewDelegate {
         // on tap of video, play/pause it
     }
 }
+
+// MARK:- UITableViewDataSource
 extension HomeDetailsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -87,7 +92,10 @@ extension HomeDetailsViewController: UITableViewDataSource {
             imageCell.images = model?.images ?? []
             return imageCell
             
-        case .description: break
+        case .description:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeDetailsCellType.description.getCellId(), for: indexPath) as? HomeDetailsDesciptionTableViewCell else { return UITableViewCell() }
+            cell.desc = model?.description
+            return cell
             
         case .video: break
             
