@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        homeView.delegate = self
         add(childView: homeView)
         initialiseHome()
     }
@@ -78,5 +79,15 @@ extension HomeViewController: UserPreferanceViewProtocol {
         case .missing: break
         case .myHouse: break
         }
+    }
+}
+
+extension HomeViewController: HomesViewProtocol {
+    func selectHome(_ model: Photo) {
+        
+        guard let homeDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeDetailsViewController") as? HomeDetailsViewController else { return }
+        
+        let navigationVC = UINavigationController(rootViewController: homeDetailsVC)
+        present(navigationVC, animated: true, completion: nil)
     }
 }

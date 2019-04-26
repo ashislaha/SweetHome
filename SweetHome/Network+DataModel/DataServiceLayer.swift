@@ -63,4 +63,11 @@ final class DataServiceProvider {
             // handle error if needed
         }
     }
+    
+    // get Home details
+    func getHomeDetails(completionBlock : @escaping (HomeDetails)->()) {
+        guard let path = Bundle.main.url(forResource: "homeDetails", withExtension: "json"), let data = try? Data(contentsOf: path) else { return }
+        guard let homeDetails = try? JSONDecoder().decode(HomeDetails.self, from: data) else { return }
+        completionBlock(homeDetails)
+    }
 }

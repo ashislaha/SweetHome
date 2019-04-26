@@ -42,6 +42,36 @@
             </objects>
             <point key="canvasLocation" x="-15" y="-3"/>
         </scene>
+        <!--Home Details View Controller-->
+        <scene sceneID="aTt-U6-Qho">
+            <objects>
+                <viewController storyboardIdentifier="HomeDetailsViewController" id="kVf-AE-sra" customClass="HomeDetailsViewController" customModule="SweetHome" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Tq-bu-WSh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VtO-re-r9j">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VtO-re-r9j" firstAttribute="leading" secondItem="VJG-Yt-KXz" secondAttribute="leading" id="0PZ-zO-ZPY"/>
+                            <constraint firstItem="VtO-re-r9j" firstAttribute="top" secondItem="9Tq-bu-WSh" secondAttribute="top" id="2qn-gU-8zV"/>
+                            <constraint firstItem="VtO-re-r9j" firstAttribute="trailing" secondItem="VJG-Yt-KXz" secondAttribute="trailing" id="7Y4-Bh-pdP"/>
+                            <constraint firstItem="VtO-re-r9j" firstAttribute="bottom" secondItem="VJG-Yt-KXz" secondAttribute="bottom" id="nNi-Ea-yQn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VJG-Yt-KXz"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="VtO-re-r9j" id="qft-W3-FXe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2s-4x-qLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="-251.42428785607197"/>
+        </scene>
         <!--Collection-->
         <scene sceneID="pAT-Yh-h4h">
             <objects>

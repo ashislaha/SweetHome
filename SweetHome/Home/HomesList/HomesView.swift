@@ -9,9 +9,8 @@
 import UIKit
 
 protocol HomesViewProtocol: class {
-    func selectHome(_ id: String)
+    func selectHome(_ model: Photo)
 }
-
 
 class HomesView: UIView {
     
@@ -70,7 +69,7 @@ extension HomesView: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension HomesView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // initialise the details of photo if needed
+        delegate?.selectHome(photos[indexPath.row])
     }
 }
 
